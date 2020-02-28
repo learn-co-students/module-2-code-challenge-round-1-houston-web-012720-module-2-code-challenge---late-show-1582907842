@@ -1,0 +1,13 @@
+<h1>Guest Info</h1>
+
+<label>Name: <%=@guest.name%><label><br>
+<label>Occupation: <%=@guest.occupation%><label><br>
+
+<label>Episodes:</label>
+<ul>
+  <%@episodes.each { |episode|%>
+    <li>
+      <%= link_to  "#{episode.to_s} with rating of #{episode.rating_of(@guest)}", episode_path(episode) %> 
+    </li>
+  <%}%>
+</ul>
