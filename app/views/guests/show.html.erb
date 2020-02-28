@@ -1,0 +1,17 @@
+<h3>Guest Info:</h3>
+<p>Name: <%= @guest.name %></p>
+<p>Occupation: <%= @guest.occupation %></p>
+
+<h5>Appearances: </h5>
+
+<% @guest.episodes.each do |e| %>
+    <p>Date: <%= link_to e.date, episode_path(e) %></p>
+        <% e.appearances.each do |a| %>
+            <% if a.episode_id == e.id %>
+            <p>Rating: <%= a.rating %></p> <!-- I don't know if this is working properly... Need more time to test with seed file -->
+            <%end%>
+        <% end %>
+<% end %>
+<br/>
+
+<button><%= link_to 'back', guests_path %></button>

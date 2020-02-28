@@ -1,0 +1,4 @@
+<h3>Appearance Info:</h3>
+<p>Rating: <%= @appearance.rating %></p>
+<p>Guest: <%= link_to @appearance.guest.name, guest_path(@appearance.guest) %></p>
+<p>Episeode: <%= @appearance.episode.number %></p>
