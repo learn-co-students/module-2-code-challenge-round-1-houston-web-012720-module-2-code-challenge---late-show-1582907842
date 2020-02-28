@@ -4,6 +4,6 @@ class Episode < ApplicationRecord
 
 
     def average_rating
-        # insert extra time here 
+        
     end
 end
