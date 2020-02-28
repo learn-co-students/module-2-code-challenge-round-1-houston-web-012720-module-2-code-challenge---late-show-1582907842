@@ -1,0 +1,12 @@
+<h1>Guest: <%= @guest.name %></h1>
+<h2>Occupation: <%= @guest.occupation %></h2>
+
+<!--
+<p><% @guest.sorted_appearances.map {|a| a.episode.date } %></p>
+-->
+
+<h2>Appearances: </h2>
+<p>(Ordered by rating)</p>
+<% @guest.sorted_appearances.each do |appearance| %>
+  <li><%= link_to appearance.episode.date, episode_path(appearance.episode) %> - Rating: <%= appearance.rating %></li>
+<% end %>
