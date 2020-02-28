@@ -1,0 +1,13 @@
+<h1>Make an Appearance</h1>
+
+<%= form_for @appearance do |f| %>
+<%= f.label :episode %>
+<%= f.collection_select :episode_id, @episodes, :id, :date %>
+<%= f.label :guest %>
+<%= f.collection_select :guest_id, @guests, :id, :name %>
+<%= f.label :rating %>
+<%= f.text_field :rating %>
+<%= f.submit %>
+<% end %>
+
+<p style="color:red";><%= flash[:error] %></p>
