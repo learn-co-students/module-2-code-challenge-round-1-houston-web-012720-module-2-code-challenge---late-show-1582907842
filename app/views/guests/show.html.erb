@@ -1,0 +1,20 @@
+<h1>Guest#show</h1>
+<label>Guest's name : </label>
+<%= @guest.name%>
+<br/>
+<label> Guest's occupation :</label>
+<%= @guest.occupation%>
+
+<label> list of the Episodes the Guest has appeared on: </label>
+
+<%@guest.episodes.each do |epo|%>
+<%=epo.date%>
+<%end%>
+
+<label> rating for the Appearance :</label>
+<%@guest.appearances.each do |app|%>
+<%= app.rate%>
+<%end%>
+
+
+

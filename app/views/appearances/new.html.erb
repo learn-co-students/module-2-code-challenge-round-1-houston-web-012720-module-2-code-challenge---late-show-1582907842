@@ -1,0 +1,18 @@
+<%if flash[:errors]%>
+<%flash[:errors].each do |error|%>
+<li style="color: red"><%= error%></li>
+<%end%>
+<%end%>
+
+
+<h1>Create a new Appearances</h1>
+<%=form_for @appearance  do |f| %>
+<%=f.label :episode_id%>
+<%=f.collection_select :episode_id , @episodes , :id , :date%>
+<%=f.label :guest_id%>
+<%=f.collection_select :guest_id , @guests , :id , :name%>
+<%=f.label :rate%>
+<%=f.text_field :rate%>
+<%=f.submit%>
+<%end%>
+
