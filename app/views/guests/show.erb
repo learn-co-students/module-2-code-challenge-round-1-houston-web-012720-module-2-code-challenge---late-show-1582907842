@@ -1,0 +1,15 @@
+<h1>
+<p><%=@guest.name %></p>
+</h1>
+
+<label>Occupation:</label>
+<p><%=@guest.occupation %></p>
+
+<label>Date:</label>
+<p><%= link_to @guest.episode.date, episode_path%></p>
+
+<label>Rating:</label>
+<p><%= @guest.episode.rating %></p>
+
+
+
