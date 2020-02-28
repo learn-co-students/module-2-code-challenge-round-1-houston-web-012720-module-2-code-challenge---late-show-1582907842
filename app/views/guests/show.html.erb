@@ -1,0 +1,20 @@
+<label>Name: <%= @guest.name %></label>
+<br>
+<br>
+
+<label>Occupation: <%= @guest.occupation %></label>
+<br>
+<br>
+
+<label>Episodes: </label><br>
+<% @episodes.each do |episode| %>
+  <% appearance = episode.appearances.find_by(guest_id: @guest.id) %>
+  <li>
+    <%= link_to episode.date, episode %>
+    <%= "[ Appearance Rated: " %> <%= appearance.rating %><%= "/5 ]" %> 
+  </li>
+<% end%>
+
+
+
+
