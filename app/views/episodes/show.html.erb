@@ -1,0 +1,13 @@
+<label>Episode: <%= @episode.number %></label>
+<br>
+<br>
+
+<label>Aired: <%= @episode.date%></label>
+
+<br>
+<br>
+<label>Guests: </label>
+<br>
+<% @guests.each do |guest| %>
+  <li><%= link_to guest.name, guest %></li>
+<% end %>
